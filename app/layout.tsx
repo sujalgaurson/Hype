@@ -23,25 +23,29 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <ClerkProvider
-        appearance={{
-          layout: {
-            socialButtonsVariant: "iconButton"
-          },
-          variables: {
-            colorText: "#fff",
-            colorPrimary: "#0E78F9",
-            colorBackground: "#1C1F2E",
-            colorInputBackground: "#252A41",
-            colorInputText: "#fff",
-          },
-        }}
-      >
-        <body className={`${inter.className} bg-dark-2`}>
+      <head>
+        <title>HYPE</title>
+      </head>
+      <body className={`${inter.className} bg-dark-2`}>
+        <ClerkProvider
+          appearance={{
+            layout: {
+              socialButtonsVariant: "iconButton",
+            },
+            variables: {
+              colorText: "#fff",
+              colorPrimary: "#0E78F9",
+              colorBackground: "#1C1F2E",
+              colorInputBackground: "#252A41",
+              colorInputText: "#fff",
+            },
+          }}
+        >
           <Toaster />
           {children}
-        </body>
-      </ClerkProvider>
+        </ClerkProvider>
+      </body>
     </html>
   );
 }
+
